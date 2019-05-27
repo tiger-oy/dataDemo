@@ -1,3 +1,4 @@
+import jdk.nashorn.internal.parser.JSONParser;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -47,9 +48,9 @@ public class demo {
      */
     @Test
   public void testApi () {
-      String url = "http://47.111.185.141/data/api/push2";
-     // String url = "http://localhost:7080/api/push2";
-      String content  = "{\"appKey\": \"hdkj\",\"sign\": \"BBD9E396ED5BFEB73F7EAAD4129B96E6\",\"data\": {\"customerName\": \"齐天大圣\",\"customerMobile\": \"1810201123\",\"houseType\": 1,\"carType\": 2,\"money\": 1000000,\"month\": 12,\"zoneId\": 10086,\"age\": 30,\"salaryBankPublic\": 5100000,\"salaryBankPrivate\": 1,\"isFund\": 1,\"isSecurity\": 1,\"creditCard\": 2,\"isBuyInsurance\": 1,\"weixinLoanAmount\": 4100000,\"alipayLoanAmount\": 0}}";
+      String url = "http://api.haidaikj.com/api/push2";
+  //    String url = "http://localhost:7080/api/push2";
+      String content  = "{\"appKey\": \"hdkj\",\"sign\": \"BBD9E396ED5BFEB73F7EAAD4129B96E6\",\"data\": {\"customerName\":\"齐天大圣\",\"customerMobile\":\"1810201123\",\"houseType\":1,\"carType\":2,\"money\":1000000,\"month\":12,\"zoneId\":10086,\"age\":30,\"salaryBankPublic\":5100000,\"salaryBankPrivate\":1,\"isFund\":1,\"isSecurity\":1,\"creditCard\":2,\"isBuyInsurance\":1,\"weixinLoanAmount\":4100000,\"alipayLoanAmount\":0}}";
       String res = HttpUtils.sendPost(url, content);
       System.out.println("返回结果："+res);
   }
