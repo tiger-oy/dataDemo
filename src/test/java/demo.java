@@ -56,4 +56,27 @@ public class demo {
       System.out.println("返回结果："+res);
   }
 
+
+    /**
+     * 获取数据
+     */
+    @Test
+    public void testGetDataApi() {
+
+        String sceret = "sd6FSsbyvxw1f";
+        String appKey = "hdkj";
+
+         String url = "http://api.haidaikj.com/api/miniInfo";
+     //   String url = "http://localhost:7080/api/miniInfo";
+        HashMap<String, String> map = new HashMap<>();
+        map.put("appKey", appKey);
+        map.put("did","100001");
+        String sign = SignUtils.sign(map, sceret);
+        map.put("sign", sign);
+        System.out.println("sign:"+sign);
+        String res = HttpUtils.sendGet(url, map);
+        System.out.println("返回结果：" + res);
+    }
+
+
 }
